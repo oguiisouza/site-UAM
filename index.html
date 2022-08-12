@@ -1,8 +1,10 @@
+<!-- github.com/oguiisouza | guilhermesc.com -->
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title> </title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title> Luz Ingá - Decorações</title>
+		<meta http-equiv="content-type" content="text/html" />
+		<meta charset="UTF-8">
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<script src="js/jquery.min.js"></script>
@@ -12,10 +14,14 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 	</head>
 	<body>
+
+		<!-- CABEÇALHO -->
+
 			<header id="header">
 
 					<h1 id="logo">Luz Ingá</h1>
@@ -29,7 +35,9 @@
 					</nav>
 
 			</header>
-			
+
+			<!-- INICIO -->
+
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 75%">
 					<header>
@@ -41,7 +49,9 @@
 					</footer>
 				</div>
 			</section>
-		
+
+		<!-- FOTOS PRODUTOS -->
+
 			<section id="prod" class="main style3 primary">
 				<div class="content container">
 					<header>
@@ -64,36 +74,66 @@
 						</div>
 
 				</div>
-			</section>
+			</section> 
+
+			<!-- FORMULARIO -->
+			<script language="JavaScript">
+				function mascara(t, mask){
+ 					var i = t.value.length;
+ 					var saida = mask.substring(1,0);
+ 					var texto = mask.substring(i)
+
+ 				if (texto.substring(0,1) != saida){
+				 t.value += texto.substring(0,1);
+ 					}
+
+ 				}
+			 </script>
+
 
 			<section id="contato" class="main style3 secondary">
-				<div class="content container">
-					<header>
-						<h2>Fale Conosco</h2>
-						<p>Caso queira entrar em contato para realizar orçamentos ou tirar dúvidas preencha os campos abaixo.</p>
-					</header>
-					<div class="box container 75%">
-					
-							<form method="post" action="#">
-								<div class="row 50%">
-									<div class="6u"><input type="text" name="name" placeholder="Nome" /></div>
-									<div class="6u"><input type="email" name="email" placeholder="E-mail" /></div>
-								</div>
-								<div class="row 50%">
-									<div class="12u"><textarea name="message" placeholder="Mensagem" rows="6"></textarea></div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<ul class="actions">
-											<li><input type="submit" value="Enviar" /></li>
-										</ul>
+				<body>
+						<div class="container">
+							<div class="circulo"></div>
+							<div class="lado1">
+								<h1>Faça um orçamento!</h1>	
+							<div class="lado2">
+								<form>
+									<div class="usuario">
+										<input type="text" id="Usuario" class="input" required>
+										<label for="">Nome Completo</label>
 									</div>
-								</div>
-							</form>
-
-					</div>
-				</div>
+									<div class="usuario">
+										<input type="email" name="" id="email" class="input" required>
+										<label for="">E-mail</label>
+									</div>
+									<div class="usuario">
+										<input type="text" name="" id="cpf" class="input" required maxlength="14" required>
+										<label for="">CPF</label>
+									</div>
+									<div class="usuario">
+										<input type="text" name="cep" class="input" onkeypress="mascara(this, '#####-###')" maxlength="9" required>
+										<label for="">CEP</label>
+									</div>
+									<div class="usuario">
+										<input type="text" id="telefone" name="" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" class="input" required/>
+										<label for="">Telefone</label>
+									</div>
+									<div class="usuario">
+										<input type="text" name="" id="mensagem" class="input" required>
+										<label for="">Mensagem</label>
+									</div>
+									<input type="submit" value="Enviar" id="enviar" class="enviar">
+								</form>
+								<div class="quadrado"></div>
+							</div>
+						</div>
+					<script src="script.js">
+					</script>
+				</body>
 			</section>
+
+			<!-- RODAPÉ -->
 			
 			<footer id="footer">
 
@@ -109,3 +149,6 @@
 
 	</body>
 </html>
+
+
+	<!-- github.com/oguiisouza -->

@@ -1,7 +1,9 @@
-@charset 'UTF-8';
+/* github.com/oguiisouza | guilhermesc.com */
+
 @import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900');
 @import url('font-awesome.min.css');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+		@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 
 	body,input,textarea,select {
 		font-family: 'Source Sans Pro', sans-serif;
@@ -11,6 +13,10 @@
 		color: #000000;
 		letter-spacing: 0.5px;
 	}
+	
+	*{
+	transition: .2s linear;
+}
 
 	h1,h2,h3,h4,h5,h6 {
 		font-weight: 900;
@@ -103,115 +109,124 @@
 					margin: 0 auto;
 					width: auto;
 				}
+
+		/*	######################## FORMULARIO ########################### */
 		
-			form label {
-				display: block;
-			}
-		
-			form input[type="text"],
-			form input[type="email"],
-			form input[type="password"],
-			form select,
-			form textarea {
-				display: block;
-				width: 100%;
-				padding: 0.65em 0.75em;
-				background: none;
-				border: solid 2px rgba(185,186,187,0.25);
-				color: inherit;
-				border-radius: 0.5em;
-				outline: none;
-
-				-moz-appearance: none;
-				-webkit-appearance: none;
-				-o-appearance: none;
-				-ms-appearance: none;
-				appearance: none;
-
-				-moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-				-webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-				-o-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-				-ms-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-				transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
-			}
-
-				form input[type="text"]:focus,
-				form input[type="email"]:focus,
-				form input[type="password"]:focus,
-				form select:focus,
-				form textarea:focus {
-					border-color: #9ac8e9;
-				}
-
-			form input[type="text"],
-			form input[type="email"],
-			form input[type="password"],
-			form select {
-				line-height: 1.35em;
-			}
-				
-			form textarea {
-				min-height: 8em;
-			}
-
-			form .formerize-placeholder {
-				color: rgba(145,146,147,0.85) !important;
-			}
-
-			form ::-webkit-input-placeholder {
-				color: rgba(145,146,147,0.85) !important;
-			}
-
-			form :-moz-placeholder {
-				color: rgba(145,146,147,0.85) !important;
-			}
-
-			form ::-moz-placeholder {
-				color: rgba(145,146,147,0.85) !important;
-			}
-
-			form :-ms-input-placeholder {
-				color: rgba(145,146,147,0.85) !important;
-			}
-
-			form ::-moz-focus-inner {
-				border: 0;
-			}
-			
-
-
-	/* Button */
-		
-		input[type="button"],
-		input[type="submit"],
-		input[type="reset"],
-		.button {
-			background-color: #98c593;
-			border: 0;
-			border-radius: 3.5em;
-			color: #fff;
-			cursor: pointer;
-			display: inline-block;
-			height: 3.5em;
-			line-height: 3.5em;
-			outline: 0;
-			padding: 0 2em 0 2em;
+		.container{
+			max-height: 85%;
+			width: 820px;
+			max-width: 90%;
+			border-radius: 15px;
 			position: relative;
-			text-align: center;
-			text-decoration: none;
-
-			-moz-appearance: none;
-			-webkit-appearance: none;
-			-o-appearance: none;
-			-ms-appearance: none;
-			appearance: none;
-
-			-moz-transition: all 0.2s ease-in-out;
-			-webkit-transition: all 0.2s ease-in-out;
-			-o-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			transition: all 0.2s ease-in-out;
 		}
+		.container .lado1{
+			flex: 1 1 410px;
+			padding: 40px;
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+			background-color: #fff;
+		}
+		.container .lado1 h1{
+			color: #1abc9c;
+			font-size: 1.8em;
+			line-height: 30px;
+			margin-bottom: 15px;
+		}
+		.container .lado1 p{
+			margin-bottom: 30px;
+		}
+		.container .lado2{
+			flex: 1 1 410px;
+			padding: 30px;
+			background-color: #1abc9c;
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+			position: relative;
+		}
+
+		.container .lado1   i{
+			background-color: #1abc9c;
+			width: 40px;
+			text-align: center;
+			line-height: 40px;
+			height: 40px;
+			color: #fff;
+			border-radius: 10px;
+		}
+		.container .lado2 form{
+			z-index: 10;
+		}
+		.container .lado2 input{
+			display: block;
+			width: 100%;
+			padding: 10px 20px;
+			border: 2px solid #fff;
+			margin: 15px 0;
+			background-color: #1abc9c;
+			border-radius: 20px;
+			color: #fefefe;
+		}
+		.container .lado2 .enviar{
+			background-color: #fefefe;
+			color: #1abc9c;
+			cursor: pointer;
+			width: 100%;
+			font-weight: 600;
+		}
+		.container .lado2 .enviar:hover{
+			background-color: #1abc9c;
+			border: 2px solid #fefefe;
+			color: #fefefe;
+		}
+		.container .lado2 .usuario{
+			position: relative;
+		}
+		.container .lado2 label{
+			color: #fefefe;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 20px;
+			pointer-events: none;
+			font-size: .9em;
+			font-weight: 400;
+		}
+		.container .lado2 .usuario.focus label{
+			background-color: #1abc9c;
+			padding: 0 5px;
+			top: 0;
+			transform: translateY(-50%);
+		}
+		.container .lado2 .quadrado{
+			position: absolute;
+			text-align: center;
+			height: 26px;
+			width: 26px;
+			background-color: #1abc9c;
+			top: 35px;
+			left: -10px;
+			z-index: 10;
+			transform: rotate(45deg);
+		}
+		.container .lado2 h1{
+			color: #fff;
+		}
+		
+		@media (max-width: 911px){
+			.container .lado2 .quadrado{
+				right: 10%;
+				top: -3%;
+				left: auto;
+				z-index: 10;
+			}
+			.container .lado1{
+				border-top-right-radius: 15px;
+				border-top-left-radius: 15px;
+				border-bottom-left-radius: 0  
+			}
+		}
+				
+		/*	################################################### */
 
 			.button.down {
 				width: 5em;
@@ -448,15 +463,15 @@
 		height: 5em;
 		line-height: 5em;
 		margin: 0;
-		background: #39454b;
+		background: #1abc9c;
 		color: #999;
-		color: rgba(185,186,187,0.5);
+		color: rgba(1255, 255, 255);
 		overflow: hidden;
 	}
 
 		#footer a {
-			color: #999;
-			color: rgba(185,186,187,0.5);
+			color: rgb(255, 255, 255);
+			color: rgba(255, 255, 255);
 		}
 
 			#footer a:hover {
@@ -493,4 +508,59 @@
 		
 			#footer .menu li {
 				font-size: 0.9em;
+			}
+
+
+			input[type="button"],
+		.button {
+			background-color: #98c593;
+			border: 0;
+			border-radius: 3.5em;
+			color: #fff;
+			cursor: pointer;
+			display: inline-block;
+			height: 3.5em;
+			line-height: 3.5em;
+			outline: 0;
+			padding: 0 2em 0 2em;
+			position: relative;
+			text-align: center;
+			text-decoration: none;
+
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			-o-appearance: none;
+			-ms-appearance: none;
+			appearance: none;
+
+			-moz-transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			-o-transition: all 0.2s ease-in-out;
+			-ms-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+		}
+
+			.button.down {
+				width: 5em;
+				height: 5em;
+				line-height: 4.5em;
+				padding: 0;
+				background-image: url('images/dark-arrow.svg');
+				background-position: center center;
+				background-repeat: no-repeat;
+				text-indent: -10em;
+				overflow: hidden;
+			}
+			
+				.button.down.anchored {
+					bottom: 0;
+					border-bottom: 0;
+					border-radius: 3em 3em 0 0;
+					height: 4.5em;
+					margin-left: -2.5em;
+				}
+			
+			.button.anchored {
+				position: absolute;
+				left: 50%;
 			}
