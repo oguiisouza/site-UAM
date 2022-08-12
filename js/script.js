@@ -20,37 +20,85 @@ inputs.forEach((input) =>{
     input.addEventListener("blur", blurOne)
 })
 
+  //CEP teste
+  function valida_cep(){
 
-let cpfInput = document.querySelector('#cpf');
+    if(document.getElementById('cep').value == ""){
 
-cpfInput.addEventListener('input', event => {
-  if(event.inputType !== 'deleteContentBackward') { 
-    if(cpfInput.value.length == 3) cpfInput.value += '.';
-    if(cpfInput.value.length == 7) cpfInput.value += '.';
-    if(cpfInput.value.length == 11) cpfInput.value += '-';
-  }
-});
+        document.getElementById('resposta').innerHTML= `<i><b>CEP Obrigatorio...</b></i>`;
+        document.getElementById("cep").style.borderBottom="red 3px solid";
+        document.getElementById("cep").focus();
+        return false
 
-function mask(o, f) {
-    setTimeout(function() {
-      var v = mphone(o.value);
-      if (v != o.value) {
-        o.value = v;
-      }
-    }, 1);
-  }
-  
-  function mphone(v) {
-    var r = v.replace(/\D/g, "");
-    r = r.replace(/^0/, "");
-    if (r.length > 10) {
-      r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-    } else if (r.length > 5) {
-      r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-    } else if (r.length > 2) {
-      r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-    } else {
-      r = r.replace(/^(\d*)/, "($1");
+    }else{
+        document.getElementById("cep").style.borderBottom="teal 3px solid";
+        document.getElementById('resposta').innerHTML= "";
+        return true
     }
-    return r;
+}
+  
+    //Apos enviar esta função limpa o formulario de contatos
+    function limpa_formulário_cep() {
+      //Limpa valores do formulário de cep.
+      document.getElementById('rua').value=("");
+      document.getElementById('bairro').value=("");
+      document.getElementById('cidade').value=("");
+      document.getElementById('estado').value=("");
+}
+
+function meu_callback(conteudo) {
+  if (!("erro" in conteudo)) {
+      //Atualiza os campos com os valores.
+      document.getElementById('rua').value=(conteudo.logradouro);
+      document.getElementById('bairro').value=(conteudo.bairro);
+      document.getElementById('cidade').value=(conteudo.localidade);
+      document.getElementById('estado').value=(conteudo.uf);
+  } //end if.
+  else {
+      //CEP não Encontrado.
+      limpa_formulário_cep();
+      alert("CEP não encontrado.");
   }
+}
+  
+function pesquisacep(valor) {
+
+  //Nova variável "cep" somente com dígitos.
+  var cep = valor.replace(/\D/g, '');
+
+  //Verifica se campo cep possui valor informado.
+  if (cep != "") {
+
+      //Expressão regular para validar o CEP.
+      var validacep = /^[0-9]{8}$/;
+
+      //Valida o formato do CEP.
+      if(validacep.test(cep)) {
+
+          //Preenche os campos com "..." enquanto consulta webservice.
+          document.getElementById('rua').value="...";
+          document.getElementById('bairro').value="...";
+          document.getElementById('cidade').value="...";
+          document.getElementById('estado').value="...";
+
+          //Cria um elemento javascript.
+          var script = document.createElement('script');
+
+          //Sincroniza com o callback.
+          script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+          //Insere script no documento e carrega o conteúdo.
+          document.body.appendChild(script);
+
+      } //end if.
+      else {
+          //cep é inválido.
+          limpa_formulário_cep();
+          alert("Formato de CEP inválido.");
+      }
+  } //end if.
+  else {
+      //cep sem valor, limpa formulário.
+      limpa_formulário_cep();
+  }
+};
