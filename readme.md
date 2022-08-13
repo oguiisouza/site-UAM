@@ -4,7 +4,7 @@ Siga os passos abaixo para conseguir utilizar o site:
 <ul>
   <li>1) Clone o arquivo e o insira na pasta htdocs</li></br></ul>
 
- Clone the repo: ````git clone https://github.com/space10-community/conversational-form.git````
+ Clone the repo: ````git clone https://github.com/oguiisouza/UAM-html.git````
 
   <li>2) Utilize o arquivo db.txt para criar a tabela no MYSQL</li>
   <li>3) Configure seu database em config.php</li>
@@ -16,4 +16,4 @@ Siga os passos abaixo para conseguir utilizar o site:
 ## Copyright
 - Desenvolvido por <a href="https://guilhermesc.com/" target="_blank">Guilherme Carvalho</a> (v1.3.0)
 
-- Clone the repo: ````git clone https://github.com/space10-community/conversational-form.git````
+- Clone the repo: ````git clone https://github.com/oguiisouza/UAM-html.git````
