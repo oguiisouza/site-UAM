@@ -1,4 +1,46 @@
 <!-- github.com/oguiisouza | guilhermesc.com -->
+<?php
+
+    if(isset($_POST['submit']))
+    {
+        // print_r('Nome: ' . $_POST['nome']);
+        // print_r('<br>');
+        // print_r('Email: ' . $_POST['email']);
+        // print_r('<br>');
+        // print_r('Telefone: ' . $_POST['telefone']);
+        // print_r('<br>');
+        // print_r('Sexo: ' . $_POST['genero']);
+        // print_r('<br>');
+        // print_r('Data de nascimento: ' . $_POST['data_nascimento']);
+        // print_r('<br>');
+        // print_r('Cidade: ' . $_POST['cidade']);
+        // print_r('<br>');
+        // print_r('Estado: ' . $_POST['estado']);
+        // print_r('<br>');
+        // print_r('Endereço: ' . $_POST['endereco']);
+
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+		$sobrenome = $_POST['sobrenome'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $cep = $_POST['cep'];
+        $endereco = $_POST['endereco'];
+        $complemento = $_POST['complemento'];
+        $cidade = $_POST['cidade'];
+        $uf = $_POST['uf'];
+		$conheceu = $_POST['conheceu'];
+		$prod = $_POST['prod'];
+		$mensagem = $_POST['mensagem'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,telefone,email,cep,endereco,complemento,cidade,uf,conheceu,prod,mensagem) 
+        VALUES ('$nome','$sobrenome','$telefone','$email','$cep','$endereco','$complemento','$cidade','$uf','$conheceu','$prod','$mensagem')");
+
+        header('Location: index.php');
+    }
+
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -144,7 +186,7 @@
 				 /* Injected CSS Code */
 			 </style>
 			 
-			 <form class="jotform-form" action="https://submit.jotform.com/submit/222230565289659/" method="post" name="form_222230565289659" id="222230565289659" accept-charset="utf-8">
+			 <form class="jotform-form" action="index.php" method="POST" name="form_222230565289659" id="222230565289659" accept-charset="utf-8">
 			   <input type="hidden" id="JWTContainer" value="" />
 			   <input type="hidden" id="cardinalOrderNumber" value="" />
 			   <div role="main" class="form-all">
@@ -172,12 +214,12 @@
 			<div id="cid_3" class="form-input-wide jf-required" data-layout="full">
 			  <div data-wrapper-react="true">
 				<span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
-				  <input type="text" id="first_3" name="q3_fullName3[first]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="" />
-				  <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false"> First Name </label>
+				  <input type="text" id="first_3" name="nome" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="" />
+				  <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false"> Nome </label>
 				</span>
 				<span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
-				  <input type="text" id="last_3" name="q3_fullName3[last]" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="" />
-				  <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false"> Last Name </label>
+				  <input type="text" id="last_3" name="sobrenome" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="" />
+				  <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false"> Sobrenome </label>
 				</span>
 			  </div>
 			</div>
@@ -191,7 +233,7 @@
 			</label>
 			<div id="cid_5" class="form-input-wide jf-required" data-layout="half">
 			  <span class="form-sub-label-container" style="vertical-align:top">
-				<input type="tel" id="input_5_full" name="q5_phoneNumber5[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(00) 00000-0000" data-component="phone" aria-labelledby="label_5" required="" />
+				<input type="tel" id="input_5_full" name="telefone" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(00) 00000-0000" data-component="phone" aria-labelledby="label_5" required="" />
 				<label class="form-sub-label is-empty" for="input_5_full" id="sublabel_5_masked" style="min-height:13px" aria-hidden="false">  </label>
 			  </span>
 			</div>
@@ -204,7 +246,7 @@
 			  </span>
 			</label>
 			<div id="cid_6" class="form-input-wide jf-required" data-layout="half">
-			  <input type="email" id="input_6" name="q6_email6" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: email@yahoo.com" data-component="email" aria-labelledby="label_6" required="" />
+			  <input type="email" id="input_6" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: email@yahoo.com" data-component="email" aria-labelledby="label_6" required="" />
 			</div>
 		  </li>
 		  <li class="form-line jf-required" data-type="control_address" id="id_4">
@@ -247,8 +289,8 @@
 				<div class="form-address-line-wrapper jsTest-address-line-wrapperField">
 				  <span class="form-address-line form-address-street-line jsTest-address-lineField">
 					<span class="form-sub-label-container" style="vertical-align:top">
-					  <input type="text" id="complemento" name="q4_address4[addr_line2]" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line2" value="" data-component="address_line_2" aria-labelledby="label_4 sublabel_4_addr_line2" />
-					  <label class="form-sub-label" for="input_4_addr_line2" id="sublabel_4_addr_line2" style="min-height:13px" aria-hidden="false"> Número / Complemento </label>
+					  <input type="text" id="complemento" name="complemento" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line2" value="" data-component="address_line_2" aria-labelledby="label_4 sublabel_4_addr_line2" />
+					  <label class="form-sub-label" for="input_4_addr_line2" id="complemento" style="min-height:13px" aria-hidden="false"> Número / Complemento </label>
 					</span>
 				  </span>
 				</div>
@@ -277,7 +319,7 @@
 			  </span>
 			</label>
 			<div id="cid_8" class="form-input-wide jf-required" data-layout="half">
-			  <select class="form-dropdown validate[required]" id="input_8" name="q8_howDid8" style="width:310px" data-component="dropdown" required="">
+			  <select class="form-dropdown validate[required]" id="input_8" name="conheceu" style="width:310px" data-component="dropdown" required="">
 				<option value=""> Selecione </option>
 				<option value="Instagram"> Instagram </option>
 				<option value="Facebook"> Facebook </option>
@@ -294,37 +336,30 @@
 			  </span>
 			</label>
 			<div id="cid_16" class="form-input-wide jf-required" data-layout="full">
-			  <div class="form-multiple-column" data-columncount="2" role="group" aria-labelledby="label_16" data-component="checkbox">
+			  <div class="form-multiple-column" data-columncount="2" name="prod" role="group" aria-labelledby="label_16" data-component="checkbox">
 				<span class="form-checkbox-item">
-				  <span class="dragger-item">
+				  <span class="dragger-item"name="cid_16">
 				  </span>
-				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_0" name="q16_listeAbaixo16[]" value="Luminárias" required="" />
+				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_0" name="prod" value="Luminárias" required="" />
 				  <label id="label_input_16_0" for="input_16_0"> Luminárias </label>
 				</span>
 				<span class="form-checkbox-item">
 				  <span class="dragger-item">
 				  </span>
-				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_1" name="q16_listeAbaixo16[]" value="Tapetes" required="" />
+				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_1" name="prod" value="Tapetes" required="" />
 				  <label id="label_input_16_1" for="input_16_1"> Tapetes </label>
 				</span>
 				<span class="form-checkbox-item" style="clear:left">
 				  <span class="dragger-item">
 				  </span>
-				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_2" name="q16_listeAbaixo16[]" value="Móveis" required="" />
+				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_2" name="prod" value="Móveis" required="" />
 				  <label id="label_input_16_2" for="input_16_2"> Móveis </label>
 				</span>
 				<span class="form-checkbox-item">
 				  <span class="dragger-item">
 				  </span>
-				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_3" name="q16_listeAbaixo16[]" value="Cortinas" required="" />
+				  <input type="checkbox" aria-describedby="label_16" class="form-checkbox validate[required]" id="input_16_3" name="prod" value="Cortinas" required="" />
 				  <label id="label_input_16_3" for="input_16_3"> Cortinas </label>
-				</span>
-				<span class="form-checkbox-item formCheckboxOther">
-				  <input type="checkbox" class="form-checkbox-other form-checkbox validate[required]" name="q16_listeAbaixo16[other]" id="other_16" value="other" tabindex="0" aria-label="Other" />
-				  <label id="label_other_16" style="text-indent:0" for="other_16"> Outro </label>
-				  <span id="other_16_input" class="other-input-container" style="display:none">
-					<input type="text" class="form-checkbox-other-input form-textbox" name="q16_listeAbaixo16[other]" data-otherhint="Other" size="15" id="input_16" data-placeholder="Escreva outra opção aqui" placeholder="Escreva outra opção aqui" />
-				  </span>
 				</span>
 			  </div>
 			</div>
@@ -332,13 +367,13 @@
 		  <li class="form-line" data-type="control_textarea" id="id_12">
 			<label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Fale sobre suas idéias para decoração: </label>
 			<div id="cid_12" class="form-input-wide" data-layout="full">
-			  <textarea id="input_12" class="form-textarea" name="q12_faleMais" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_12"></textarea>
+			  <textarea id="input_12" class="form-textarea" name="mensagem" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_12"></textarea>
 			</div>
 		  </li>
 		  <li class="form-line" data-type="control_button" id="id_2">
 			<div id="cid_2" class="form-input-wide" data-layout="full">
 			  <div data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
-				<button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
+				<button id="input_2" type="submit" name="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
 				  Enviar
 				</button>
 			  </div>
@@ -347,9 +382,6 @@
 		</ul>
 	  </div>
 	</section>
-
-
-
 			<!-- RODAPÉ -->
 			
 			<footer id="footer">
