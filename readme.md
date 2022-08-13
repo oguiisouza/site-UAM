@@ -4,7 +4,7 @@ Siga os passos abaixo para conseguir utilizar o site:
 <ul>
   <li>1) Clone o repositório
   
-  ````git clone https://github.com/oguiisouza/site-UAM.git````</li></br>
+  ````git clone https://github.com/oguiisouza/site-UAM.git````
   <li>2) Coloque na pasta HTDOCS</li>
   <li>3) Utilize o arquivo db.txt para criar a tabela no MYSQL</li>
   <li>4) Configure seu database em config.php</li>
