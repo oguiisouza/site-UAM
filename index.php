@@ -365,7 +365,7 @@
 			</div>
 		  </li>
 		  <li class="form-line" data-type="control_textarea" id="id_12">
-			<label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Fale sobre suas idéias para decoração: </label>
+			<label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Fale sobre seu projeto: </label>
 			<div id="cid_12" class="form-input-wide" data-layout="full">
 			  <textarea id="input_12" class="form-textarea" name="mensagem" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_12"></textarea>
 			</div>
