@@ -13,4 +13,4 @@ Siga os passos abaixo para conseguir utilizar o site:
 
 
 ## Copyright
-- Desenvolvido por <a href="https://guilhermesc.com/" target="_blank">Guilherme Carvalho</a> (v1.3.0)
+- Desenvolvido por <a href="http://guilhermesc.com/" target="_blank">Guilherme Carvalho</a> (v1.3.0)
