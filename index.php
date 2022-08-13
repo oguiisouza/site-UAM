@@ -233,7 +233,7 @@
 			</label>
 			<div id="cid_5" class="form-input-wide jf-required" data-layout="half">
 			  <span class="form-sub-label-container" style="vertical-align:top">
-				<input type="tel" id="input_5_full" name="telefone" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(00) 00000-0000" data-component="phone" aria-labelledby="label_5" required="" />
+				<input type="tel" id="input_5_full" name="telefone" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(DDD) 12345-6789" data-component="phone" aria-labelledby="label_5" required="" />
 				<label class="form-sub-label is-empty" for="input_5_full" id="sublabel_5_masked" style="min-height:13px" aria-hidden="false">  </label>
 			  </span>
 			</div>
