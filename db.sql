@@ -49,6 +49,7 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sobrenome` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefone` varchar(110) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(110) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cep` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
