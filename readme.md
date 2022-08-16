@@ -11,6 +11,8 @@ Siga os passos abaixo para conseguir utilizar o site:
   <li>5) Para testar se a conexão está correta utilize localhost/luz/config.php</li>
   <li>6) Acesse o site em localhost/luz/index.php</li>
 
+
+
 Atividade desenvolvida para Universidade Anhembi Morumbi.
 
 
