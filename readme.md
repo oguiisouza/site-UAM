@@ -12,9 +12,10 @@ Siga os passos abaixo para conseguir utilizar o site:
   <li>6) Acesse o site em localhost/luz/index.php</li>
 
 
-## Finalidade❔
-- Atividade desenvolvida para Universidade Anhembi Morumbi.
+## Finalidade
+<br>
+- Atividade desenvolvida para máteria de Desenvolvimento de Software para Web na Universidade Anhembi Morumbi.
 
 
-## Copyright ©️
-- Desenvolvido por <a href="http://guilhermesc.com/" target="_blank">Guilherme Carvalho</a> v1.4.0
+## Copyright ©
+- Desenvolvido por <a href="http://guilhermesc.com/" target="_blank">Guilherme Carvalho</a> (v1.4.0)
