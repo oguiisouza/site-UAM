@@ -1,3 +1,4 @@
+<!-- github.com/oguiisouza | guilhermesc.com -->
 <?php
 
     $dbHost = 'localhost';

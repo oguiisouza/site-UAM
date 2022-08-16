@@ -21,30 +21,28 @@
 
         include_once('config.php');
 
-        $nome = $_POST['nome'];
-		$sobrenome = $_POST['sobrenome'];
-        $telefone = $_POST['telefone'];
-        $email = $_POST['email'];
-        $cep = $_POST['cep'];
-        $endereco = $_POST['endereco'];
-        $complemento = $_POST['complemento'];
-        $cidade = $_POST['cidade'];
-        $uf = $_POST['uf'];
-		$conheceu = $_POST['conheceu'];
-		$prod = $_POST['prod'];
+        $nome_c = $_POST['nome'];
+		$sobrenome_c = $_POST['sobrenome'];
+        $telefone_c = $_POST['telefone'];
+        $email_c = $_POST['email'];
+        $cep_c = $_POST['cep'];
+        $endereco_c = $_POST['endereco'];
+        $complemento_c = $_POST['complemento'];
+        $cidade_c = $_POST['cidade'];
+        $uf_c = $_POST['uf'];
+		$conheceu_c = $_POST['conheceu'];
 		$mensagem = $_POST['mensagem'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,telefone,email,cep,endereco,complemento,cidade,uf,conheceu,prod,mensagem) 
-        VALUES ('$nome','$sobrenome','$telefone','$email','$cep','$endereco','$complemento','$cidade','$uf','$conheceu','$prod','$mensagem')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome_c,sobrenome_c,telefone_c,email_c,cep_c,endereco_c,complemento_c,cidade_c,uf_c,conheceu_c,mensagem_c) 
+        VALUES ('$nome_c','$sobrenome_c','$telefone_c','$email_c','$cep_c','$endereco_c','$complemento_c','$cidade_c','$uf_c','$conheceu_c','$mensagem_c')");
 
         header('Location: index.php');
     }
 
 ?>
 <!DOCTYPE HTML>
-<html>
 	<head>
-		<title> Luz Ingá - Decorações</title>
+		<title> Luz Ingá | Home</title>
 		<meta http-equiv="content-type" content="text/html" />
 		<meta charset="UTF-8">
 		<meta name="description" content="" />
@@ -66,12 +64,16 @@
 		<!-- CABEÇALHO -->
 
 			<header id="header">
-					<h1 id="logo">Luz Ingá</h1>
+				
+			<h1><a href="index.php" id="logo">Luz Ingá</a></h1>
+
 					<nav id="nav">
 						<ul>
 							<li><a href="#intro">Home</a></li>
 							<li><a href="#prod">Produtos</a></li>
 							<li><a href="#contato">Contato</a></li>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="formulario.php">Cadastre-se</a></li>
 						</ul>
 					</nav>
 			</header>
@@ -81,7 +83,7 @@
 			<section id="intro" class="main style1 dark fullscreen">
 				<div class="content container 75%">
 					<header>
-						<h2>Luz Ingá</h2>
+						<h2>Luz Ingá </h2>
 					</header>
 					<p>Está busca de Lustres e Pendentes para acrescentar requinte à decoração do seu lar? </p> Temos todas as necessidades você pode dar um brilho a mais ao lado desses produtos.</p>
 					<footer>
@@ -89,30 +91,57 @@
 					</footer>
 				</div>
 			</section>
-
+</body>
+<br> </br>
 		<!-- FOTOS PRODUTOS -->
-
-			<section id="prod" class="main style3 primary">
-				<div class="content container">
-					<header>
-						<h2>Produtos</h2>
-					</header>
-						<div class="container 75% gallery">
-							<div class="row 0% images">
-								<div class="6u"><a href="images/fulls/01.jpg" class="image fit from-left"><img src="images/fulls/01.jpg" title="Lustre Cristal" alt="Lustre" /></a></div>
-								<div class="6u"><a href="images/fulls/02.jpg" class="image fit from-right"><img src="images/fulls/02.jpg" title="Lustre de Cristal Clássico" alt="Lustre" /></a></div>
-							</div>
-							<div class="row 0% images">
-								<div class="6u"><a href="images/fulls/03.jpg" class="image fit from-left"><img src="images/fulls/03.jpg" title="Lustre Moderno" alt="Lustre" /></a></div>
-								<div class="6u"><a href="images/fulls/04.jpg" class="image fit from-right"><img src="images/fulls/04.jpg" title="Lustre ADHARA" alt="Lustre" /></a></div>
-							</div>
-							<div class="row 0% images">
-								<div class="6u"><a href="images/fulls/05.jpg" class="image fit from-left"><img src="images/fulls/05.jpg" title="Lustre" alt="Lustre" /></a></div>
-								<div class="6u"><a href="images/fulls/06.jpg" class="image fit from-right"><img src="images/fulls/06.jpg" title="Lustre" alt="Lustre" /></a></div>
-							</div>
-						</div>
-				</div>
-			</section> 
+		<section id="prod">
+		<main class="xxx">
+        <div class="card">
+            <img src="https://a-static.mlcdn.com.br/618x463/lustre-pendente-de-cristal-acrilico-manucrillic-cobre-marryluz/marryluz/lpdcamc/f6fa4d08747867bb429b158c7fe9b352.jpg" />
+            <span>Lustre Cristal</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://a-static.mlcdn.com.br/618x463/lustre-pendente-moderno-60cm-aneis-led-89w-3-arco-cobre-st517-starlumen/vicente/5046140300/c7a44f2eae2cf7385c55be60808dc348.jpg" />
+			<span>Lustre Anéis</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://a-static.mlcdn.com.br/618x463/lustre-pendente-moderno-sputnik-circuit-dourado-6xe27-design-moderno-quarto-sala-startec/esquilosshop/149260070/e0832ad2c923ab0b68f2869d5ecdb462.jpg" />
+			<span>Lustre Moderno</span>
+			<span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://img.irroba.com.br/fit-in/950x950/filters:format(webp):fill(fff):quality(95)/jabucomb/catalog/5d936499bd40d.jpg" />
+			<span>Abajour escritório</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://codexhome.com.br/wp-content/uploads/2020/04/536-lumin%C3%A1ria-de-piso-chuveiro-inox.jpg" />
+            <span>Luminária de Piso</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://staticmobly.akamaized.net/r/2000x2000/p/Vya-Store-Abajur-de-Vidro-e-Metal-Belle-Prata-9117-454669-1.jpg" />
+            <span>Abajour Vye Prata</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://a-static.mlcdn.com.br/618x463/smart-lampada-led-hie27qf-colorida-inteligente-10w-com-wifi-geonav-bivolt/mega-mamute/13983/e250c01cdd7b560a9161c8d2acd20242.jpg" />
+            <span>Lampada Led Wifi</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://patolastore.vteximg.com.br/arquivos/ids/155930-1000-1000/Arandela-Viena-117-pt.jpg?v=636692710781500000" />
+            <span>Arandela Viena</span>
+            <span>R$xx,xx</span>
+        </div>
+        <div class="card">
+            <img src="https://a-static.mlcdn.com.br/618x463/refletor-led-holofote-50w-6500k-branco-frio-decoracao-casa-loja-jardim-quadra-super-led/123comprou/l-113-x1a1/dc1f8a16c585f1f10d6e1621e9a8e3d6.jpg" />
+            <span>Refletor Led 50W</span>
+            <span>R$xx,xx</span>
+        </div>
+    </main>
 
 			<!-- FORMULARIO -->
 			<script>
@@ -214,11 +243,11 @@
 			<div id="cid_3" class="form-input-wide jf-required" data-layout="full">
 			  <div data-wrapper-react="true">
 				<span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
-				  <input type="text" id="first_3" name="nome" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="" />
+				  <input type="text" id="first_3" name="nome_c" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 given-name" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="" />
 				  <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false"> Nome </label>
 				</span>
 				<span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
-				  <input type="text" id="last_3" name="sobrenome" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="" />
+				  <input type="text" id="last_3" name="sobrenome_c" class="form-textbox validate[required]" data-defaultvalue="" autoComplete="section-input_3 family-name" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="" />
 				  <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false"> Sobrenome </label>
 				</span>
 			  </div>
@@ -233,7 +262,7 @@
 			</label>
 			<div id="cid_5" class="form-input-wide jf-required" data-layout="half">
 			  <span class="form-sub-label-container" style="vertical-align:top">
-				<input type="tel" id="input_5_full" name="telefone" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(DDD) 12345-6789" data-component="phone" aria-labelledby="label_5" required="" />
+				<input type="tel" id="input_5_full" name="telefone_c" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel" style="width:310px" data-masked="true" value="" placeholder="(DDD) 12345-6789" data-component="phone" aria-labelledby="label_5" required="" />
 				<label class="form-sub-label is-empty" for="input_5_full" id="sublabel_5_masked" style="min-height:13px" aria-hidden="false">  </label>
 			  </span>
 			</div>
@@ -246,7 +275,7 @@
 			  </span>
 			</label>
 			<div id="cid_6" class="form-input-wide jf-required" data-layout="half">
-			  <input type="email" id="input_6" name="email" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: email@yahoo.com" data-component="email" aria-labelledby="label_6" required="" />
+			  <input type="email" id="input_6" name="email_c" class="form-textbox validate[required, Email]" data-defaultvalue="" style="width:310px" size="310" value="" placeholder="ex: email@yahoo.com" data-component="email" aria-labelledby="label_6" required="" />
 			</div>
 		  </li>
 		  <li class="form-line jf-required" data-type="control_address" id="id_4">
@@ -273,7 +302,7 @@
 				<div class="form-address-line-wrapper jsTest-address-line-wrapperField">
 					<span class="form-address-line form-address-zip-line jsTest-address-lineField ">
 					  <span class="form-sub-label-container" style="vertical-align:top">
-						<input type="text" id="cep" name="cep" class="form-textbox validate[required] form-address-postal"size="10" maxlength="9"autoComplete="" data-component="zip" aria-labelledby="label_4 sublabel_4_postal" onblur="getDadosEnderecoPorCEP(this.value)" onkeypress="mascara(this, '#####-###')"/>
+						<input type="text" id="cep_c" name="cep_c" class="form-textbox validate[required] form-address-postal"size="10" maxlength="9"autoComplete="" data-component="zip" aria-labelledby="label_4 sublabel_4_postal" onblur="getDadosEnderecoPorCEP(this.value)" onkeypress="mascara(this, '#####-###')"/>
 						<label class="form-sub-label" for="input_4_postal" id="sublabel_4_postal" style="min-height:13px" aria-hidden="false"> CEP </label>
 					  </span>
 					</span>
@@ -281,30 +310,30 @@
 				<div class="form-address-line-wrapper jsTest-address-line-wrapperField">
 				  <span class="form-address-line form-address-street-line jsTest-address-lineField">
 					<span class="form-sub-label-container" style="vertical-align:top">
-					  <input type="text" name="endereco" id="endereco"  class="form-textbox validate[required] form-address-line" data-defaultvalue="" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required/>
-					  <label class="form-sub-label" for="input_4_addr_line1" id="endereco" style="min-height:13px" aria-hidden="false"> Rua </label>
+					  <input type="text" name="endereco_c" id="endereco"  class="form-textbox validate[required] form-address-line" data-defaultvalue="" value="" data-component="address_line_1" aria-labelledby="label_4 sublabel_4_addr_line1" required/>
+					  <label class="form-sub-label" for="input_4_addr_line1" id="endereco_c" style="min-height:13px" aria-hidden="false"> Rua </label>
 					</span>
 				  </span>
 				</div>
 				<div class="form-address-line-wrapper jsTest-address-line-wrapperField">
 				  <span class="form-address-line form-address-street-line jsTest-address-lineField">
 					<span class="form-sub-label-container" style="vertical-align:top">
-					  <input type="text" id="complemento" name="complemento" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line2" value="" data-component="address_line_2" aria-labelledby="label_4 sublabel_4_addr_line2" />
-					  <label class="form-sub-label" for="input_4_addr_line2" id="complemento" style="min-height:13px" aria-hidden="false"> Número / Complemento </label>
+					  <input type="text" id="complemento_c" name="complemento_c" class="form-textbox form-address-line" data-defaultvalue="" autoComplete="section-input_4 address-line2" value="" data-component="address_line_2" aria-labelledby="label_4 sublabel_4_addr_line2" />
+					  <label class="form-sub-label" for="input_4_addr_line2" id="complemento_c" style="min-height:13px" aria-hidden="false"> Número / Complemento </label>
 					</span>
 				  </span>
 				</div>
 				<div class="form-address-line-wrapper jsTest-address-line-wrapperField">
 				  <span class="form-address-line form-address-city-line jsTest-address-lineField ">
 					<span class="form-sub-label-container" style="vertical-align:top">
-					  <input type="text" id="cidade" name="cidade" class="form-textbox validate[required] form-address-city" data-defaultvalue="" value="" data-component="city" aria-labelledby="label_4 sublabel_4_city" required/>
-					  <label class="form-sub-label" for="input_4_city" id="cidade" style="min-height:13px" aria-hidden="false"> Cidade </label>
+					  <input type="text" id="cidade_c" name="cidade_c" class="form-textbox validate[required] form-address-city" data-defaultvalue="" value="" data-component="city" aria-labelledby="label_4 sublabel_4_city" required/>
+					  <label class="form-sub-label" for="input_4_city" id="cidade_c" style="min-height:13px" aria-hidden="false"> Cidade </label>
 					</span>
 				  </span>
 				  <span class="form-address-line form-address-state-line jsTest-address-lineField ">
 					<span class="form-sub-label-container" style="vertical-align:top">
-					  <input type="text" id="uf" name="uf" class="form-textbox validate[required] form-address-state" data-defaultvalue="" autoComplete="section-input_4 address-level1" value="" data-component="state" aria-labelledby="label_4 sublabel_4_state" required />
-					  <label class="form-sub-label" for="input_4_state" id="uf" style="min-height:13px" aria-hidden="false"> Estado </label>
+					  <input type="text" id="uf_c" name="uf_c" class="form-textbox validate[required] form-address-state" data-defaultvalue="" autoComplete="section-input_4 address-level1" value="" data-component="state" aria-labelledby="label_4 sublabel_4_state" required />
+					  <label class="form-sub-label" for="input_4_state" id="uf_c" style="min-height:13px" aria-hidden="false"> Estado </label>
 					</span>
 				  </span>
 				</div>
@@ -319,7 +348,7 @@
 			  </span>
 			</label>
 			<div id="cid_8" class="form-input-wide jf-required" data-layout="half">
-			  <select class="form-dropdown validate[required]" id="input_8" name="conheceu" style="width:310px" data-component="dropdown" required="">
+			  <select class="form-dropdown validate[required]" id="input_8" name="conheceu_c" style="width:310px" data-component="dropdown" required="">
 				<option value=""> Selecione </option>
 				<option value="Instagram"> Instagram </option>
 				<option value="Facebook"> Facebook </option>
@@ -367,7 +396,7 @@
 		  <li class="form-line" data-type="control_textarea" id="id_12">
 			<label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Fale sobre seu projeto: </label>
 			<div id="cid_12" class="form-input-wide" data-layout="full">
-			  <textarea id="input_12" class="form-textarea" name="mensagem" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_12"></textarea>
+			  <textarea id="input_12" class="form-textarea" name="mensagem_c" style="width:648px;height:163px" data-component="textarea" aria-labelledby="label_12"></textarea>
 			</div>
 		  </li>
 		  <li class="form-line" data-type="control_button" id="id_2">
@@ -395,4 +424,4 @@
 			</footer>
 	</body>
 </html>
-	<!-- github.com/oguiisouza -->
+<!-- github.com/oguiisouza -->
