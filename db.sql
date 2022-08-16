@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `form` /*!40100 DEFAULT CHARACTER SET utf8mb4 COL
 USE `form`;
 -- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
 --
--- Host: 127.0.0.0    Database: form
+-- Host: 127.0.0.1    Database: form
 -- ------------------------------------------------------
 -- Server version	10.4.24-MariaDB
 
@@ -36,7 +36,7 @@ CREATE TABLE `login` (
   `estado` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   `endereco` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,8 +57,10 @@ CREATE TABLE `usuarios` (
   `complemento` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cidade` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `uf` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `conheceu` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mensagem` varchar(700) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -70,4 +72,4 @@ CREATE TABLE `usuarios` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-15 21:36:35
+-- Dump completed on 2022-08-15 23:59:26
