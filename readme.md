@@ -6,7 +6,7 @@ Siga os passos abaixo para conseguir utilizar o site:
   
   ````git clone https://github.com/oguiisouza/site-UAM.git````
   <li>2) Coloque na pasta HTDOCS</li>
-  <li>3) Utilize o arquivo db.txt para criar a tabela no MYSQL</li>
+  <li>3) Utilize o arquivo db.sql para criar o Database no MYSQL</li>
   <li>4) Configure seu database em config.php</li>
   <li>5) Para testar se a conexão está correta utilize localhost/luz/config.php</li>
   <li>6) Acesse o site em localhost/luz/index.php</li>
