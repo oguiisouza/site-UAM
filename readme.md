@@ -13,7 +13,7 @@ Siga os passos abaixo para conseguir utilizar o site:
 
 
 ## Finalidade
-<br>
+
 - Atividade desenvolvida para máteria de Desenvolvimento de Software para Web na Universidade Anhembi Morumbi.
 
 
