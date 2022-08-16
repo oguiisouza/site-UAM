@@ -39,3 +39,4 @@
         header('Location: login.php');
     }
 ?>
+<!-- github.com/oguiisouza | guilhermesc.com -->

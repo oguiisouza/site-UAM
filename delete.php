@@ -20,3 +20,4 @@
     header('Location: sistema.php');
    
 ?>
+<!-- github.com/oguiisouza | guilhermesc.com -->

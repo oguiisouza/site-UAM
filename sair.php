@@ -5,3 +5,4 @@
     unset($_SESSION['senha']);
     header("Location: index.php");
 ?>
+<!-- github.com/oguiisouza | guilhermesc.com -->

@@ -1,4 +1,5 @@
 
+/* <!-- github.com/oguiisouza | guilhermesc.com --> */
 (function($) {
 
 	var settings = {

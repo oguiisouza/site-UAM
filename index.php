@@ -191,7 +191,6 @@
 					}, 20);
 			 if (window.JotForm && JotForm.accessible) $('input_12').setAttribute('tabindex',0);
 				   JotForm.alterTexts({"alphabetic":"Este campo pode apenas conter letras","alphanumeric":"Este campo pode apenas conter letras e números","confirmClearForm":"Are you sure you want to clear the form","email":"Insira um e-mail válido","freeEmailError":"Contas de e-mail grátis não são permitidas!","lessThan":"Your score should be less than","minSelectionsError":"Selecione pelo menos um campo","numeric":"Este campo pode apenas conter números","required":"Este campo é obrigatório","requireOne":"Pelo menos um campo é obrigatório!"});
-				 /*INIT-END*/
 				 });
 			 
 				JotForm.prepareCalculationsOnTheFly([null,{"name":"clickTo","qid":"1","text":"Faca um orcamento!","type":"control_head"},{"name":"enviar","qid":"2","text":"Enviar","type":"control_button"},{"name":"fullName3","qid":"3","text":"Nome Completo","type":"control_fullname"},{"name":"address4","qid":"4","text":"Endereco","type":"control_address"},{"name":"phoneNumber5","qid":"5","text":"Telefone","type":"control_phone"},{"name":"email6","qid":"6","subLabel":"","text":"E-mail","type":"control_email"},null,{"name":"howDid8","qid":"8","text":"Como nos encontrou?","type":"control_dropdown"},null,null,null,{"name":"faleMais","qid":"12","text":"Fale mais sobre suas ideias para decoracao:","type":"control_textarea"},null,null,null,{"description":"","name":"listeAbaixo16","qid":"16","text":"Liste abaixo os produtos que voce se interessou:","type":"control_checkbox"}]);
